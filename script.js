@@ -131,7 +131,7 @@ console.log("El porcentaje de la tercera persona es: " + porcentaje3 + "%");
 Realizar una calculadora con las operaciones básicas suma, división,
 multiplicación y división*/
 
-let numero1 = prompt("Ingrese el primer número");
+/*let numero1 = prompt("Ingrese el primer número");
 let numero2 = prompt("Ingrese el segundo número");
 let suma = parseInt(numero1) + parseInt(numero2);
 let resta = parseInt(numero1) - parseInt(numero2);
@@ -141,3 +141,91 @@ console.log("La suma es: " + suma);
 console.log("La resta es: " + resta);
 console.log("La multiplicación es: " + multiplicacion);
 console.log("La división es: " + division);  // No se puede dividir por 0git
+*/
+//Estructuras de control
+
+//Ejemplo 1- Declarar dos variables una que sea el nombre y otra que sea la edad y mostrar si es mayor de edad o no.
+
+/*
+El usuario digite nombre y edad con la siguiente estructura de verficación:
+1 a 18 años es joven
+19 a 40 años es adulto
+41 a 60 años maduro
+61 en adelante es anciano
+*/
+/*
+let nombre = prompt("Ingrese su nombre");
+let edad = parseInt(prompt("Ingrese su edad"));
+if(edad >= 1 && edad <= 18){
+    alert (nombre + " eres una persona joven.");
+} else if(edad >= 19 && edad <= 40){
+    alert (nombre + " eres una persona adulta.");
+    } else if(edad >= 41 && edad <= 60){
+        alert (nombre + " eres una persona madura.");
+    }
+    else if(edad >= 61){
+        alert (nombre + " eres una persona anciana.");
+    }
+*/
+// Ciclo while
+// Declarar una variable numérica que muestre la cuenta regresiva a llagar a 0
+
+/*
+let cuentaAtras = parseInt(prompt("Ingrese un número"));
+while (cuentaAtras> 0) {
+    document.write(cuentaAtras , "<br>");
+    cuentaAtras = cuentaAtras - 1
+  } 
+*/
+//Do while
+
+/* Imprmir 5 edades de difrentes personas y determinar si son mayores de edad o no , utilizando el método DO while*/
+
+
+/*
+ let contador = 0;
+
+do {
+    let edad = parseInt(prompt("Ingrese la edad de la persona " + (contador + 1)));
+    if (edad >= 18) {
+        document.write("La persona " + (contador + 1) + " es mayor de edad.<br>");
+    } else {
+        document.write("La persona " + (contador + 1) + " es menor de edad.<br>");
+    }
+    contador++;
+} while (contador < 5);
+*/
+
+ /*
+ let numPersonas = 0;
+do {
+    let nombre = prompt("Ingrese el nombre de la persona " );
+    let edad = parseInt(prompt("Ingrese la edad de la persona "));
+    if (edad >= 18) {
+        alert( nombre + " es mayor de edad.");
+    } else {
+       alert(nombre + " es menor de edad.");
+    }
+    numPersonas++;
+}
+while (numPersonas <= 5);
+*/
+//Ciclo for
+/* Imprimir las tablas de multiplicar del número que el ususario digite hasta el número 10 utilizando el ciclo for, mostrar en pantalla la siguiente sintaxis :
+5x1=5
+5x2=10
+5x3=15
+5x4=20
+5x5=25
+5x6=30
+5x7=35
+5x8=40
+5x9=45
+5x10=50
+
+*/
+let numero = parseInt(prompt("Ingresa  el número de la tabla de multiplicar que deseas ver"));
+for (let i = 1; i <= 10; i++) {
+    let resultado = numero * i;
+    document.write(numero + "x" + i + "=" + resultado, "<br>");
+}

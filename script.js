@@ -526,27 +526,27 @@ function saludar(nombre) {
 Las funciones declarativas se definen usando la palabra clave `function` seguida del nombre de la función.
 Pueden ser llamadas antes de su definición debido al hoisting.
 */
-function saludar(nombre) {  // Define una función llamada `saludar` que toma un parámetro `nombre`.
-    return `Hola, ${nombre}`;  // Retorna un mensaje de saludo usando el parámetro `nombre`.
+function calcularAreaRectangulo(base, altura) {  // Define una función llamada `calcularAreaRectangulo` que toma dos parámetros.
+    return base * altura;  // Retorna el área del rectángulo (base * altura).
 }
-alert(saludar("Juan"));  // Llama a la función `saludar` con el argumento "Juan" y muestra el resultado en una alerta.
+alert(calcularAreaRectangulo(5, 10));  // Llama a la función con los argumentos 5 y 10, y muestra el resultado en una alerta.
 
 /*
 **Concepto: Funciones Expresivas**
 Las funciones expresivas se asignan a una variable. No tienen nombre y solo pueden ser llamadas después de su definición.
 */
-const despedir = function(nombre) {  // Define una función anónima y la asigna a la variable `despedir`.
-    return `Adiós, ${nombre}`;  // Retorna un mensaje de despedida usando el parámetro `nombre`.
+const calcularVolumenCubo = function(lado) {  // Define una función anónima y la asigna a la variable `calcularVolumenCubo`.
+    return lado ** 3;  // Retorna el volumen del cubo (lado al cubo).
 };
-alert(despedir("Ana"));  // Llama a la función `despedir` con el argumento "Ana" y muestra el resultado en una alerta.
+alert(calcularVolumenCubo(4));  // Llama a la función con el argumento 4 y muestra el resultado en una alerta.
 
 /*
 **Concepto: Funciones Flecha**
 Las funciones flecha (arrow functions) tienen una sintaxis más corta y no tienen su propio `this`.
 Son ideales para funciones simples.
 */
-const sumar = (a, b) => a + b;  // Define una función flecha que toma dos parámetros `a` y `b` y retorna su suma.
-alert(sumar(5, 3));  // Llama a la función `sumar` con los argumentos 5 y 3, y muestra el resultado en una alerta.
+const calcularPromedio = (a, b, c) => (a + b + c) / 3;  // Define una función flecha que calcula el promedio de tres números.
+alert(calcularPromedio(10, 20, 30));  // Llama a la función con los argumentos 10, 20 y 30, y muestra el resultado en una alerta.
 
 // ==================================================
 // 2. Arreglos en JavaScript
@@ -556,31 +556,31 @@ alert(sumar(5, 3));  // Llama a la función `sumar` con los argumentos 5 y 3, y 
 **Concepto: Creación de arreglos**
 Los arreglos son estructuras de datos que permiten almacenar múltiples valores en una sola variable.
 */
-const frutas = ["Manzana", "Banana", "Cereza"];  // Crea un arreglo llamado `frutas` con tres elementos.
+const colores = ["Rojo", "Verde", "Azul"];  // Crea un arreglo llamado `colores` con tres elementos.
 
 /*
 **Concepto: Acceso a elementos**
 Los elementos de un arreglo se acceden mediante su índice, comenzando desde 0.
 */
-alert(frutas[1]);  // Accede al segundo elemento del arreglo (índice 1) y lo muestra en una alerta ("Banana").
+alert(colores[2]);  // Accede al tercer elemento del arreglo (índice 2) y lo muestra en una alerta ("Azul").
 
 /*
 **Concepto: Métodos comunes**
 - `push()`: Añade un elemento al final del arreglo.
 - `pop()`: Elimina el último elemento del arreglo.
 */
-frutas.push("Naranja");  // Añade "Naranja" al final del arreglo `frutas`.
-alert(frutas);  // Muestra el contenido actualizado del arreglo en una alerta.
+colores.push("Amarillo");  // Añade "Amarillo" al final del arreglo `colores`.
+alert(colores);  // Muestra el contenido actualizado del arreglo en una alerta.
 
-const ultimaFruta = frutas.pop();  // Elimina el último elemento del arreglo ("Naranja") y lo asigna a `ultimaFruta`.
-alert(ultimaFruta);  // Muestra el último elemento eliminado en una alerta.
+const ultimoColor = colores.pop();  // Elimina el último elemento del arreglo ("Amarillo") y lo asigna a `ultimoColor`.
+alert(ultimoColor);  // Muestra el último elemento eliminado en una alerta.
 
 /*
 **Concepto: Iteración sobre arreglos**
 El método `forEach()` permite ejecutar una función para cada elemento del arreglo.
 */
-frutas.forEach(fruta => {  // Itera sobre cada elemento del arreglo `frutas`.
-    alert(fruta);  // Muestra cada elemento en una alerta.
+colores.forEach(color => {  // Itera sobre cada elemento del arreglo `colores`.
+    alert(color);  // Muestra cada elemento en una alerta.
 });
 
 // ==================================================
@@ -591,39 +591,39 @@ frutas.forEach(fruta => {  // Itera sobre cada elemento del arreglo `frutas`.
 **Concepto: Clases y Objetos**
 Las clases son plantillas para crear objetos. Un objeto es una instancia de una clase.
 */
-class Persona {  // Define una clase llamada `Persona`.
-    constructor(nombre, edad) {  // Define el constructor de la clase, que toma dos parámetros: `nombre` y `edad`.
+class Animal {  // Define una clase llamada `Animal`.
+    constructor(nombre, sonido) {  // Define el constructor de la clase, que toma dos parámetros: `nombre` y `sonido`.
         this.nombre = nombre;  // Asigna el valor del parámetro `nombre` a la propiedad `nombre` del objeto.
-        this.edad = edad;  // Asigna el valor del parámetro `edad` a la propiedad `edad` del objeto.
+        this.sonido = sonido;  // Asigna el valor del parámetro `sonido` a la propiedad `sonido` del objeto.
     }
 
-    saludar() {  // Define un método llamado `saludar`.
-        alert(`Hola, mi nombre es ${this.nombre} y tengo ${this.edad} años.`);  // Muestra un mensaje de saludo con las propiedades del objeto.
+    hacerSonido() {  // Define un método llamado `hacerSonido`.
+        alert(`${this.nombre} hace ${this.sonido}.`);  // Muestra un mensaje con el nombre y el sonido del animal.
     }
 }
 
-const persona1 = new Persona("Carlos", 30);  // Crea una instancia de la clase `Persona` con los argumentos "Carlos" y 30.
-persona1.saludar();  // Llama al método `saludar` del objeto `persona1`.
+const perro = new Animal("Perro", "Guau");  // Crea una instancia de la clase `Animal` con los argumentos "Perro" y "Guau".
+perro.hacerSonido();  // Llama al método `hacerSonido` del objeto `perro`.
 
 /*
 **Concepto: Herencia**
 La herencia permite crear una clase basada en otra clase existente.
 La clase hija hereda propiedades y métodos de la clase padre.
 */
-class Estudiante extends Persona {  // Define una clase `Estudiante` que hereda de la clase `Persona`.
-    constructor(nombre, edad, curso) {  // Define el constructor de la clase `Estudiante`.
-        super(nombre, edad);  // Llama al constructor de la clase padre (`Persona`) con los argumentos `nombre` y `edad`.
-        this.curso = curso;  // Asigna el valor del parámetro `curso` a la propiedad `curso` del objeto.
+class Gato extends Animal {  // Define una clase `Gato` que hereda de la clase `Animal`.
+    constructor(nombre, sonido, color) {  // Define el constructor de la clase `Gato`.
+        super(nombre, sonido);  // Llama al constructor de la clase padre (`Animal`) con los argumentos `nombre` y `sonido`.
+        this.color = color;  // Asigna el valor del parámetro `color` a la propiedad `color` del objeto.
     }
 
-    estudiar() {  // Define un método llamado `estudiar`.
-        alert(`${this.nombre} está estudiando ${this.curso}.`);  // Muestra un mensaje con el nombre y el curso del estudiante.
+    ronronear() {  // Define un método llamado `ronronear`.
+        alert(`${this.nombre} está ronroneando.`);  // Muestra un mensaje con el nombre del gato.
     }
 }
 
-const estudiante1 = new Estudiante("Ana", 22, "Matemáticas");  // Crea una instancia de la clase `Estudiante`.
-estudiante1.saludar();  // Llama al método `saludar` heredado de la clase `Persona`.
-estudiante1.estudiar();  // Llama al método `estudiar` de la clase `Estudiante`.
+const gato1 = new Gato("Gato", "Miau", "Gris");  // Crea una instancia de la clase `Gato`.
+gato1.hacerSonido();  // Llama al método `hacerSonido` heredado de la clase `Animal`.
+gato1.ronronear();  // Llama al método `ronronear` de la clase `Gato`.
 
 // ==================================================
 // 4. Manejo de Eventos y el DOM
@@ -634,39 +634,31 @@ estudiante1.estudiar();  // Llama al método `estudiar` de la clase `Estudiante`
 El DOM (Document Object Model) permite interactuar con los elementos HTML.
 Se puede seleccionar un elemento usando `document.getElementById()`.
 */
-const boton = document.getElementById("miBoton");  // Selecciona el elemento del DOM con el ID `miBoton`.
+const botonCambiarColor = document.getElementById("cambiarColor");  // Selecciona el elemento del DOM con el ID `cambiarColor`.
 
 /*
 **Concepto: Agregar un evento**
 Los eventos permiten ejecutar código cuando ocurre una interacción del usuario, como un clic.
 */
-boton.addEventListener("click", function() {  // Agrega un evento de clic al botón seleccionado.
-    alert("Botón clickeado!");  // Muestra una alerta cuando se hace clic en el botón.
+botonCambiarColor.addEventListener("click", function() {  // Agrega un evento de clic al botón seleccionado.
+    document.body.style.backgroundColor = "lightblue";  // Cambia el color de fondo del cuerpo del documento a azul claro.
+    alert("Color de fondo cambiado!");  // Muestra una alerta cuando se hace clic en el botón.
 });
 
 // ==================================================
 // 5. Módulos en JavaScript
 // ==================================================
 
-/*
-**Concepto: Exportación de funciones**
-Los módulos permiten dividir el código en archivos separados.
-Las funciones pueden exportarse usando `export`.
-*/
-function saludarModulo(nombre) {  // Define una función llamada `saludarModulo`.
-    return `Hola desde el módulo, ${nombre}`;  // Retorna un mensaje de saludo.
-}
+// Importación de exportaciones nombradas
+import { sumar, PI } from './mathOperations.js';
 
-function despedirModulo(nombre) {  // Define una función llamada `despedirModulo`.
-    return `Adiós desde el módulo, ${nombre}`;  // Retorna un mensaje de despedida.
-}
+// Importación de la exportación por defecto
+import multiplicar from './mathOperations.js';
 
-/*
-**Concepto: Uso de funciones exportadas**
-Las funciones exportadas pueden importarse en otros archivos usando `import`.
-*/
-alert(saludarModulo("Pedro"));  // Llama a la función `saludarModulo` y muestra el resultado en una alerta.
-alert(despedirModulo("Laura"));  // Llama a la función `despedirModulo` y muestra el resultado en una alerta.
+// Uso de las funciones y constantes importadas
+console.log(sumar(5, 3)); // Output: 8
+console.log(PI); // Output: 3.1416
+console.log(multiplicar(4, 2)); // Output: 8
 
 // ==================================================
 // 6. Programación Asíncrona
@@ -676,14 +668,14 @@ alert(despedirModulo("Laura"));  // Llama a la función `despedirModulo` y muest
 **Concepto: Callbacks**
 Un callback es una función que se pasa como argumento a otra función y se ejecuta después de que se complete una operación.
 */
-function obtenerDatos(callback) {  // Define una función llamada `obtenerDatos` que toma un callback como parámetro.
+function simularDescargaDeDatos(callback) {  // Define una función llamada `simularDescargaDeDatos` que toma un callback como parámetro.
     setTimeout(() => {  // Simula una operación asíncrona con `setTimeout`.
-        callback("Datos recibidos");  // Llama al callback con el mensaje "Datos recibidos".
+        callback("Datos descargados correctamente");  // Llama al callback con el mensaje "Datos descargados correctamente".
     }, 2000);  // Espera 2 segundos antes de ejecutar el callback.
 }
 
-obtenerDatos(function(datos) {  // Llama a la función `obtenerDatos` y pasa un callback.
-    alert(datos);  // Muestra el mensaje "Datos recibidos" en una alerta.
+simularDescargaDeDatos(function(mensaje) {  // Llama a la función `simularDescargaDeDatos` y pasa un callback.
+    alert(mensaje);  // Muestra el mensaje "Datos descargados correctamente" en una alerta.
 });
 
 /*
@@ -691,16 +683,16 @@ obtenerDatos(function(datos) {  // Llama a la función `obtenerDatos` y pasa un 
 Las promesas representan un valor que puede estar disponible ahora, en el futuro o nunca.
 Permiten manejar operaciones asíncronas de manera más legible.
 */
-function obtenerDatosPromesa() {  // Define una función llamada `obtenerDatosPromesa`.
+function simularCargaDeDatos() {  // Define una función llamada `simularCargaDeDatos`.
     return new Promise((resolve, reject) => {  // Retorna una nueva promesa.
         setTimeout(() => {  // Simula una operación asíncrona con `setTimeout`.
-            resolve("Datos recibidos con promesa");  // Resuelve la promesa con el mensaje "Datos recibidos con promesa".
+            resolve("Datos cargados correctamente");  // Resuelve la promesa con el mensaje "Datos cargados correctamente".
         }, 2000);  // Espera 2 segundos antes de resolver la promesa.
     });
 }
 
-obtenerDatosPromesa().then(datos => {  // Llama a la función `obtenerDatosPromesa` y maneja la promesa resuelta.
-    alert(datos);  // Muestra el mensaje "Datos recibidos con promesa" en una alerta.
+simularCargaDeDatos().then(mensaje => {  // Llama a la función `simularCargaDeDatos` y maneja la promesa resuelta.
+    alert(mensaje);  // Muestra el mensaje "Datos cargados correctamente" en una alerta.
 });
 
 /*
@@ -708,14 +700,14 @@ obtenerDatosPromesa().then(datos => {  // Llama a la función `obtenerDatosProme
 `async` y `await` son una forma más moderna de trabajar con promesas.
 `async` define una función asíncrona, y `await` pausa la ejecución hasta que la promesa se resuelva.
 */
-async function obtenerDatosAsync() {  // Define una función asíncrona llamada `obtenerDatosAsync`.
-    const datos = await obtenerDatosPromesa();  // Espera a que la promesa se resuelva y asigna el resultado a `datos`.
-    alert(datos);  // Muestra el mensaje "Datos recibidos con promesa" en una alerta.
+async function mostrarDatosCargados() {  // Define una función asíncrona llamada `mostrarDatosCargados`.
+    const mensaje = await simularCargaDeDatos();  // Espera a que la promesa se resuelva y asigna el resultado a `mensaje`.
+    alert(mensaje);  // Muestra el mensaje "Datos cargados correctamente" en una alerta.
 }
 
-obtenerDatosAsync();  // Llama a la función `obtenerDatosAsync`.
+mostrarDatosCargados();  // Llama a la función `mostrarDatosCargados`.
 
 
 
 
-
+º

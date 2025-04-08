@@ -526,27 +526,31 @@ function saludar(nombre) {
 Las funciones declarativas se definen usando la palabra clave `function` seguida del nombre de la función.
 Pueden ser llamadas antes de su definición debido al hoisting.
 */
+/*
 function calcularAreaRectangulo(base, altura) {  // Define una función llamada `calcularAreaRectangulo` que toma dos parámetros.
     return base * altura;  // Retorna el área del rectángulo (base * altura).
 }
 alert(calcularAreaRectangulo(5, 10));  // Llama a la función con los argumentos 5 y 10, y muestra el resultado en una alerta.
-
+*/
 /*
 **Concepto: Funciones Expresivas**
 Las funciones expresivas se asignan a una variable. No tienen nombre y solo pueden ser llamadas después de su definición.
 */
+/*
 const calcularVolumenCubo = function(lado) {  // Define una función anónima y la asigna a la variable `calcularVolumenCubo`.
     return lado ** 3;  // Retorna el volumen del cubo (lado al cubo).
 };
 alert(calcularVolumenCubo(4));  // Llama a la función con el argumento 4 y muestra el resultado en una alerta.
-
+*/
 /*
 **Concepto: Funciones Flecha**
 Las funciones flecha (arrow functions) tienen una sintaxis más corta y no tienen su propio `this`.
 Son ideales para funciones simples.
 */
+/*
 const calcularPromedio = (a, b, c) => (a + b + c) / 3;  // Define una función flecha que calcula el promedio de tres números.
 alert(calcularPromedio(10, 20, 30));  // Llama a la función con los argumentos 10, 20 y 30, y muestra el resultado en una alerta.
+*/
 
 // ==================================================
 // 2. Arreglos en JavaScript
@@ -556,32 +560,40 @@ alert(calcularPromedio(10, 20, 30));  // Llama a la función con los argumentos 
 **Concepto: Creación de arreglos**
 Los arreglos son estructuras de datos que permiten almacenar múltiples valores en una sola variable.
 */
+/*
 const colores = ["Rojo", "Verde", "Azul"];  // Crea un arreglo llamado `colores` con tres elementos.
+*/
 
 /*
 **Concepto: Acceso a elementos**
 Los elementos de un arreglo se acceden mediante su índice, comenzando desde 0.
 */
+/*
 alert(colores[2]);  // Accede al tercer elemento del arreglo (índice 2) y lo muestra en una alerta ("Azul").
+*/
 
 /*
 **Concepto: Métodos comunes**
 - `push()`: Añade un elemento al final del arreglo.
 - `pop()`: Elimina el último elemento del arreglo.
 */
+/*
 colores.push("Amarillo");  // Añade "Amarillo" al final del arreglo `colores`.
 alert(colores);  // Muestra el contenido actualizado del arreglo en una alerta.
 
 const ultimoColor = colores.pop();  // Elimina el último elemento del arreglo ("Amarillo") y lo asigna a `ultimoColor`.
 alert(ultimoColor);  // Muestra el último elemento eliminado en una alerta.
+*/
 
 /*
 **Concepto: Iteración sobre arreglos**
 El método `forEach()` permite ejecutar una función para cada elemento del arreglo.
 */
+/*
 colores.forEach(color => {  // Itera sobre cada elemento del arreglo `colores`.
     alert(color);  // Muestra cada elemento en una alerta.
 });
+*/
 
 // ==================================================
 // 3. Programación Orientada a Objetos (POO)
@@ -591,6 +603,7 @@ colores.forEach(color => {  // Itera sobre cada elemento del arreglo `colores`.
 **Concepto: Clases y Objetos**
 Las clases son plantillas para crear objetos. Un objeto es una instancia de una clase.
 */
+/*
 class Animal {  // Define una clase llamada `Animal`.
     constructor(nombre, sonido) {  // Define el constructor de la clase, que toma dos parámetros: `nombre` y `sonido`.
         this.nombre = nombre;  // Asigna el valor del parámetro `nombre` a la propiedad `nombre` del objeto.
@@ -602,14 +615,16 @@ class Animal {  // Define una clase llamada `Animal`.
     }
 }
 
+
 const perro = new Animal("Perro", "Guau");  // Crea una instancia de la clase `Animal` con los argumentos "Perro" y "Guau".
 perro.hacerSonido();  // Llama al método `hacerSonido` del objeto `perro`.
-
+*/
 /*
 **Concepto: Herencia**
 La herencia permite crear una clase basada en otra clase existente.
 La clase hija hereda propiedades y métodos de la clase padre.
 */
+/*
 class Gato extends Animal {  // Define una clase `Gato` que hereda de la clase `Animal`.
     constructor(nombre, sonido, color) {  // Define el constructor de la clase `Gato`.
         super(nombre, sonido);  // Llama al constructor de la clase padre (`Animal`) con los argumentos `nombre` y `sonido`.
@@ -624,6 +639,7 @@ class Gato extends Animal {  // Define una clase `Gato` que hereda de la clase `
 const gato1 = new Gato("Gato", "Miau", "Gris");  // Crea una instancia de la clase `Gato`.
 gato1.hacerSonido();  // Llama al método `hacerSonido` heredado de la clase `Animal`.
 gato1.ronronear();  // Llama al método `ronronear` de la clase `Gato`.
+*/
 
 // ==================================================
 // 4. Manejo de Eventos y el DOM
@@ -634,21 +650,25 @@ gato1.ronronear();  // Llama al método `ronronear` de la clase `Gato`.
 El DOM (Document Object Model) permite interactuar con los elementos HTML.
 Se puede seleccionar un elemento usando `document.getElementById()`.
 */
+/*
 const botonCambiarColor = document.getElementById("cambiarColor");  // Selecciona el elemento del DOM con el ID `cambiarColor`.
-
+*/
 /*
 **Concepto: Agregar un evento**
 Los eventos permiten ejecutar código cuando ocurre una interacción del usuario, como un clic.
 */
+/*
 botonCambiarColor.addEventListener("click", function() {  // Agrega un evento de clic al botón seleccionado.
     document.body.style.backgroundColor = "lightblue";  // Cambia el color de fondo del cuerpo del documento a azul claro.
     alert("Color de fondo cambiado!");  // Muestra una alerta cuando se hace clic en el botón.
 });
+*/
 
 // ==================================================
 // 5. Módulos en JavaScript
 // ==================================================
 
+/*
 // Importación de exportaciones nombradas
 import { sumar, PI } from './mathOperations.js';
 
@@ -659,6 +679,7 @@ import multiplicar from './mathOperations.js';
 console.log(sumar(5, 3)); // Output: 8
 console.log(PI); // Output: 3.1416
 console.log(multiplicar(4, 2)); // Output: 8
+*/
 
 // ==================================================
 // 6. Programación Asíncrona
@@ -668,6 +689,7 @@ console.log(multiplicar(4, 2)); // Output: 8
 **Concepto: Callbacks**
 Un callback es una función que se pasa como argumento a otra función y se ejecuta después de que se complete una operación.
 */
+/*
 function simularDescargaDeDatos(callback) {  // Define una función llamada `simularDescargaDeDatos` que toma un callback como parámetro.
     setTimeout(() => {  // Simula una operación asíncrona con `setTimeout`.
         callback("Datos descargados correctamente");  // Llama al callback con el mensaje "Datos descargados correctamente".
@@ -677,12 +699,14 @@ function simularDescargaDeDatos(callback) {  // Define una función llamada `sim
 simularDescargaDeDatos(function(mensaje) {  // Llama a la función `simularDescargaDeDatos` y pasa un callback.
     alert(mensaje);  // Muestra el mensaje "Datos descargados correctamente" en una alerta.
 });
+*/
 
 /*
 **Concepto: Promesas**
 Las promesas representan un valor que puede estar disponible ahora, en el futuro o nunca.
 Permiten manejar operaciones asíncronas de manera más legible.
 */
+/*
 function simularCargaDeDatos() {  // Define una función llamada `simularCargaDeDatos`.
     return new Promise((resolve, reject) => {  // Retorna una nueva promesa.
         setTimeout(() => {  // Simula una operación asíncrona con `setTimeout`.
@@ -694,12 +718,14 @@ function simularCargaDeDatos() {  // Define una función llamada `simularCargaDe
 simularCargaDeDatos().then(mensaje => {  // Llama a la función `simularCargaDeDatos` y maneja la promesa resuelta.
     alert(mensaje);  // Muestra el mensaje "Datos cargados correctamente" en una alerta.
 });
+*/
 
 /*
 **Concepto: Async/Await**
 `async` y `await` son una forma más moderna de trabajar con promesas.
 `async` define una función asíncrona, y `await` pausa la ejecución hasta que la promesa se resuelva.
 */
+/*
 async function mostrarDatosCargados() {  // Define una función asíncrona llamada `mostrarDatosCargados`.
     const mensaje = await simularCargaDeDatos();  // Espera a que la promesa se resuelva y asigna el resultado a `mensaje`.
     alert(mensaje);  // Muestra el mensaje "Datos cargados correctamente" en una alerta.
@@ -707,7 +733,174 @@ async function mostrarDatosCargados() {  // Define una función asíncrona llama
 
 mostrarDatosCargados();  // Llama a la función `mostrarDatosCargados`.
 
+*/
+//Ejercicio 1
+/*
+let nombre= "Jeidi";
+const saludar = nombre => {
+    console.log("Hola " + nombre)
+  }
+*/
+//Calculadora con funciones tradicionales
+/*
+function sumar (a,b){
+    return a + b;
+    }
+    function dividir (a,b){
+    return a / b;
+    }
+    function restar (a,b){
+        return a - b;
+    }
+    function multiplicar (a,b){
+        return a * b;
+    }
 
+    console.log(sumar(34,5));
+    console.log(dividir(40,2));
+    console.log(restar(21,5));
+    console.log(multiplicar(7,8));
+*/
+//Calculadora con funciones flecha
+/*
+const sumarFlecha = (a,b) => {
+    return a + b;
+}
+const restarFlecha = (a,b) => {
+    return a - b;
+}
+const multiplicarFlecha = (a,b) => {
+    return a * b;
+}
+const dividirFlecha = (a,b) => {
+    return a / b;
+}
+    console.log (sumarFlecha(55,76));
+    console.log (restarFlecha(54,42));
+    console.log (multiplicarFlecha(10,6));
+    console.log (dividirFlecha(50,5));
+*/
+/*
+function cuentaAtras(numero) {
+    // Condición base: Si el número que recibe es
+    // menor de 0 entonces salimos de la función
+    if (numero < 0) { return }
+  
+    // Si el número era mayor o igual a 0, lo mostramos
+    console.log(numero)
+  
+    // Y llamamos a la función con el número anterior
+    cuentaAtras(numero - 1)
+  }
 
+    cuentaAtras(40);
 
-º
+*/
+//Escribe una función que calcule la suma de los primeros n números enteros de forma recursiva.
+/*
+function sumaNumeros(numero) {
+    // Condición base: Si n es 1, la suma es 1
+    if (numero === 1) {
+        return 1
+      } else {
+        // Si n no es 1, sumamos n con la suma de los números anteriores
+        return n + sumaNumeros(numero - 1)
+      }
+    }
+    console.log(sumaNumeros(10));
+*/
+/*
+const numbers = [1, 2, 3, 4, 5]
+numbers[0] = 20
+
+console.log(numbers)
+*/
+/*
+const frutas = ["manzana", "pera", "plátano", "fresa"]
+console.log(frutas.length)
+*/
+/*En un restaurante se reciben pedidos de comida a domicilio. Vamos a escribir una función procesarPedido que recibe un pedido, que es un array de platos. Lo que debemos hacer es:
+
+El primer elemento lo sacamos del array, ya que es el nombre del cliente.
+Añadimos al principio del array la cadena de texto "bebida", ya que es una promoción que tenemos.
+Después añadimos al final del array el nombre del usuario que sacamos antes.
+*/
+
+/*
+function procesarPedido(pedidos) {
+    const nombreCliente = pedidos.shift();
+    pedidos.unshift("bebida");
+    pedidos.push(nombreCliente);
+    return pedidos
+}
+const pedidos = ["Jesus", "Hamburguesa", "Papas Fritas", "Coca cola" ]
+console.log(procesarPedido(pedidos))
+*/
+/*
+Dada una lista de números, escribe una función en JavaScript que devuelva la suma de todos los números
+ pares en la lista. La función deberá iterar sobre cada número en la lista, comprobar 
+si el número es par y, si es así, añadirlo a la suma total. Usa el bucle que quieras para
+solucionarlo.
+*/
+/*
+function sumarPares(numeros) {
+    let suma = 0
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+            suma += numeros[i]
+        }
+        }
+    return suma
+  }
+numeros =[22, 2, 3, 4, 5, 6, 7, 18, 9, 2]
+console.log(sumarPares(numeros))
+*/
+/*
+Crear una función que reciba un array de palabras y devuelva true si todas las palabras terminan con 
+la letra "a" y false si al menos una palabra no termina con la letra "a".
+Usa el método endsWith() de string para resolverlo.
+*/
+/*
+function acabanEnA(words) {
+   const acabanenA= words.every( words => words.endsWith("a"))
+   return acabanenA
+  }
+
+  const words = ["Pepe", "Casa", "Luna", "Mora"]
+  console.log(acabanEnA(words)) 
+*/
+/*Recibes una lista de números. Debes ordenar los números de menor a mayor según su valor absoluto.
+ Eso quiere decir que los números negativos pierden el signo y se ordenan como si fueran positivos.
+Por ejemplo, si recibes [5, -10, -2, -25, -7] deberías devolver [-2, 5, -7, -10, -25].
+Puedes usar el método Math.abs(num) para obtener el valor absoluto de un número.
+*/
+/*
+    function sortAbsoluteNumbers(numbers) {
+        const numerosOrdenados = numbers.sort ((a, b) => Math.abs(a)- Math.abs(b));
+       console.log(numerosOrdenados)
+    }
+sortAbsoluteNumbers ([5, -10, -2, -25, -7]);
+*/
+/*
+
+const numbers = [1, 2, 3, 4, 5, 6, 7]
+
+const doubleEvenNumbers = numbers.reduce((accumulator, currentNumber) => {
+  const isEven = currentNumber % 2 === 0
+  const doubled = currentNumber * 2
+  const isGreaterThanFive = doubled > 5
+
+  // si es par y mayor que 5, lo añadimos al array
+  if (isEven && isGreaterThanFive) {
+    // para ello devolvemos un nuevo array con el valor actual
+    return accumulator.concat(doubled)
+  } else {
+    // si no, devolvemos lo que ya teníamos
+    return accumulator
+  }
+}, []) // <- el array vacío es el valor inicial
+
+console.log(doubleEvenNumbers) // [8, 12]
+*/
+let numeros =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(numeros.length)
